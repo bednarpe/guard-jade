@@ -9,7 +9,7 @@ module Guard
     include ::Guard::Helpers::Starter
 
     def target_filename(directory, file)
-      File.join(directory, File.basename(file).sub(/(\.html)?\.jade$/, '.html'))
+      File.join(directory, file.gsub('.jade', '.html'))
     end
 
     def act_on(directory, file)
