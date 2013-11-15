@@ -8,12 +8,8 @@ module Guard
   class Jade < Guard
     include ::Guard::Helpers::Starter
 
-    def target_filename(directory, file)
-      File.join(directory, file.gsub('.jade', '.html'))
-    end
-
     def act_on(directory, file)
-      target = target_filename(directory, file)
+      target = file.gsub('client/','').gsub('.jade','.html')
       FileUtils.mkdir_p(File.dirname(target))
 
       if system("jade #{file} -o #{target}")
