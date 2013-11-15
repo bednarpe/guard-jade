@@ -16,7 +16,7 @@ module Guard
       target = target_filename(directory, file)
       FileUtils.mkdir_p(File.dirname(target))
 
-      if system("jade < #{file} > #{target}")
+      if system("jade #{file} -o #{target}")
         mtime = File.mtime(file)
         File.utime(mtime, mtime, file)
         file
