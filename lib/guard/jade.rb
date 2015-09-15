@@ -1,5 +1,4 @@
 require 'guard'
-require 'guard/guard'
 require 'guard/watcher'
 require 'guard/helpers/starter'
 require 'guard/helpers/formatter'
